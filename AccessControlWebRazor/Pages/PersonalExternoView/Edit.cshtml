@@ -1,0 +1,65 @@
+﻿@page
+@model AccessControlWebRazor.Pages.PersonalExternoView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="content-wrapper">
+
+
+    <div class="contetn">
+
+        <div class="container-fluid">
+            <h1>Edit</h1>
+
+            <h4>PersonalExternoModel</h4>
+            <hr />
+            <div class="row">
+                <div class="col-md-4">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="PersonalExternoModel.Id" />
+                        <div class="form-group">
+                            <label asp-for="PersonalExternoModel.Id" class="control-label"></label>
+                            <input asp-for="PersonalExternoModel.Id" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonalExternoModel.Dni" class="control-label"></label>
+                            <input asp-for="PersonalExternoModel.Dni" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonalExternoModel.Cuil" class="control-label"></label>
+                            <input asp-for="PersonalExternoModel.Cuil" class="form-control" />
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PersonalExternoModel.LastName" class="control-label"></label>
+                            <input asp-for="PersonalExternoModel.LastName" class="form-control" />
+
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" asp-for="PersonalExternoModel.IsActive" /> @Html.DisplayNameFor(model => model.PersonalExternoModel.IsActive)
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Save" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <a asp-page="./Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,50 @@
+﻿@page
+@model AccessControlWebRazor.Pages.UsuarioView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Usuario</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Usuario.ID" />
+            <div class="form-group">
+                <label asp-for="Usuario.User" class="control-label"></label>
+                <input asp-for="Usuario.User" class="form-control" />
+                <span asp-validation-for="Usuario.User" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.Password" class="control-label"></label>
+                <input asp-for="Usuario.Password" class="form-control" />
+                <span asp-validation-for="Usuario.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.PersonalID" class="control-label"></label>
+                <input asp-for="Usuario.PersonalID" class="form-control" />
+                <span asp-validation-for="Usuario.PersonalID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Usuario.PermisoID" class="control-label"></label>
+                <input asp-for="Usuario.PermisoID" class="form-control" />
+                <span asp-validation-for="Usuario.PermisoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

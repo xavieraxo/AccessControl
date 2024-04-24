@@ -1,0 +1,121 @@
+﻿@page
+@model AccessControlWebRazor.Pages.LecturaPatentesModel
+
+@{
+    ViewData["Title"] = "LecturaPatentes";
+}
+
+<style>
+    th, td {
+        padding: 0.5rem !important;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="content-fluid">
+        <div class="col-12 px-0">
+            <div class="card mb-0" style="height: 840px; width: auto; border-radius: 0">
+                <div class="card-header">
+                    <!-- Primera Fila -->
+                    <div class="d-flex row justify-content-between align-items-center mb-4">
+                        <div class="col-md-4" style="width: fit-content">
+                            <!-- Botón "Prender semáforos" -->
+                            <form method="post" class="form-inline">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="submit" style="background-color: #7FAB3D; width: 100%; color: #000; font-weight: bold; height: auto; box-shadow: 4px 4px 10px 000000; border: none;" asp-page-handler="OpenDoor" value="Prender semáforos 🚦" class="btn btn-secondary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-4" style="width: fit-content">
+                            <!-- Botón "Apagar semáforos" -->
+                            <form method="post" class="form-inline">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="submit" style="background-color: #D31111; width: 100%; color: #000; font-weight: bold; height: auto; box-shadow: 4px 4px 10px #000000; border: none;" asp-page-handler="CloseDoor" value="Apagar semáforos 🚦" class="btn btn-secondary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="col-md-4" style="width: fit-content">
+                            <!-- Botón "Procesar lecturas" -->
+                            <form method="post" class="form-inline">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="submit" style="background-color: #e37a2d; width: 100%; color: #000; font-weight: bold; height: auto; box-shadow: 4px 4px 10px 000000; border: none;" asp-page-handler="ProcessAll" value="Procesar lecturas ⚙️" class="btn btn-secondary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Segunda Fila -->
+                    <div class="d-flex row justify-content-between align-items-center">
+                        <div class="col-md-4" style="width: fit-content;">
+                            <!-- Título "Lista de Lecturas de DNI" -->
+                            <h3 class="card-title mt-2" style="font-size: 20px; font-weight: bold;">Lista de Lecturas de Patentes</h3>
+                        </div>
+                        <div class="col-md-8" style="max-width: 450px; width: fit-content;">
+                            <!-- Formulario de Filtro -->
+                            <form method="post" class="form-inline">
+                                <div class="form-row">
+                                    <div class="col-3">
+                                        <label for="Filter" class="mr-2 w-100 mt-2">Filtro:</label>
+                                    </div>
+                                    <div class="col-6">
+                                        <input asp-for="SearchModel.Filter" type="text" class="form-control w-100" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #8CA483; color: #fff;" />
+                                    </div>
+                                    <div class="col-3">
+                                        <input type="submit" style="background-color: #505F4B; width: 100px" asp-page-handler="Search" value="Buscar 🔍" class="btn btn-secondary" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <a style="display: inline-block; font-size: 16px; text-align: center; text-decoration: none; border-top: 1px solid #ccc; border-left: 1px solid #ccc; border-right: 1px solid #ccc; border-radius: 5px 5px 0 0; background-color: transparent; color: #000; cursor: pointer;" href="/LogDeAcceso" class="nav-link mt-2">Ver lecturas DNI →</a>
+                </div>
+                <div class="card-body table-responsive p-0" style="max-height: auto; width: auto; overflow-y: auto; text-align: left;">
+
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead style="font-size: 18px; font-weight: bold; color: #fff;">
+                            <tr>
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.LecturaPatentes[0].Patente)
+                                </th>
+                                <th style="background-color: #A7191B;">
+                                    @Html.DisplayNameFor(model => model.LecturaPatentes[0].FechaLectura)
+                                </th>
+
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.LecturaPatentes[0].Camara)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 16px;">
+                            @foreach (var item in Model.LecturaPatentes.OrderByDescending(x => Convert.ToDateTime(x.FechaLectura)))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Patente)
+                                    </td>
+                                    <td>
+                                        Html.DisplayFor(modelItem => item.FechaLectura)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Camara)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

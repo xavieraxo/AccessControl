@@ -1,0 +1,62 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Procesamiento.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>ProcesamientoModel</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.Legajo)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.Legajo)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.HoraIngreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.HoraIngreso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.HoraEgreso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.HoraEgreso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.TotalHoras)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.TotalHoras)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.Procesado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.Procesado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.ProcedenciaEmpleado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.ProcedenciaEmpleado)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ProcesamientoModel.EstadoFichada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ProcesamientoModel.EstadoFichada)
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ProcesamientoModel.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

@@ -1,0 +1,121 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Modules\APIHikVisionModule\**" />
+    <Compile Remove="Modules\LecturaPatenteModule\**" />
+    <Compile Remove="Modules\LecturaPatentesModule\**" />
+    <Compile Remove="Modules\ProcesamientoVehiculosProdengModule\**" />
+    <Compile Remove="Pages\Maquinarias\**" />
+    <Content Remove="Modules\APIHikVisionModule\**" />
+    <Content Remove="Modules\LecturaPatenteModule\**" />
+    <Content Remove="Modules\LecturaPatentesModule\**" />
+    <Content Remove="Modules\ProcesamientoVehiculosProdengModule\**" />
+    <Content Remove="Pages\Maquinarias\**" />
+    <EmbeddedResource Remove="Modules\APIHikVisionModule\**" />
+    <EmbeddedResource Remove="Modules\LecturaPatenteModule\**" />
+    <EmbeddedResource Remove="Modules\LecturaPatentesModule\**" />
+    <EmbeddedResource Remove="Modules\ProcesamientoVehiculosProdengModule\**" />
+    <EmbeddedResource Remove="Pages\Maquinarias\**" />
+    <None Remove="Modules\APIHikVisionModule\**" />
+    <None Remove="Modules\LecturaPatenteModule\**" />
+    <None Remove="Modules\LecturaPatentesModule\**" />
+    <None Remove="Modules\ProcesamientoVehiculosProdengModule\**" />
+    <None Remove="Pages\Maquinarias\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Models\VehiculoProdeng.cs" />
+    <Compile Remove="Pages\CentroCostoView\Create.cshtml.cs" />
+    <Compile Remove="Pages\CentroCostoView\Delete.cshtml.cs" />
+    <Compile Remove="Pages\CentroCostoView\Details.cshtml.cs" />
+    <Compile Remove="Pages\Create.cshtml.cs" />
+    <Compile Remove="Pages\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Details.cshtml.cs" />
+    <Compile Remove="Pages\Edit.cshtml.cs" />
+    <Compile Remove="Pages\Error.cshtml.cs" />
+    <Compile Remove="Pages\Invitados\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Invitados\Details.cshtml.cs" />
+    <Compile Remove="Pages\Invitados\Edit.cshtml.cs" />
+    <Compile Remove="Pages\LecturaPatentes.cshtml.cs" />
+    <Compile Remove="Pages\PersonalExternoView\Create.cshtml.cs" />
+    <Compile Remove="Pages\PersonalExternoView\Delete.cshtml.cs" />
+    <Compile Remove="Pages\PersonalExternoView\Details.cshtml.cs" />
+    <Compile Remove="Pages\PersonalView\Create.cshtml.cs" />
+    <Compile Remove="Pages\PersonalView\Delete.cshtml.cs" />
+    <Compile Remove="Pages\PersonalView\Details.cshtml.cs" />
+    <Compile Remove="Pages\Privacy.cshtml.cs" />
+    <Compile Remove="Pages\Procesamiento\Create.cshtml.cs" />
+    <Compile Remove="Pages\Procesamiento\Delete.cshtml.cs" />
+    <Compile Remove="Pages\Procesamiento\Details.cshtml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Pages\CentroCostoView\Create.cshtml" />
+    <Content Remove="Pages\CentroCostoView\Delete.cshtml" />
+    <Content Remove="Pages\CentroCostoView\Details.cshtml" />
+    <Content Remove="Pages\Create.cshtml" />
+    <Content Remove="Pages\Delete.cshtml" />
+    <Content Remove="Pages\Details.cshtml" />
+    <Content Remove="Pages\Edit.cshtml" />
+    <Content Remove="Pages\Error.cshtml" />
+    <Content Remove="Pages\Invitados\Delete.cshtml" />
+    <Content Remove="Pages\Invitados\Details.cshtml" />
+    <Content Remove="Pages\Invitados\Edit.cshtml" />
+    <Content Remove="Pages\LecturaPatentes.cshtml" />
+    <Content Remove="Pages\PersonalExternoView\Create.cshtml" />
+    <Content Remove="Pages\PersonalExternoView\Delete.cshtml" />
+    <Content Remove="Pages\PersonalExternoView\Details.cshtml" />
+    <Content Remove="Pages\PersonalView\Create.cshtml" />
+    <Content Remove="Pages\PersonalView\Delete.cshtml" />
+    <Content Remove="Pages\PersonalView\Details.cshtml" />
+    <Content Remove="Pages\Privacy.cshtml" />
+    <Content Remove="Pages\Procesamiento\CentroCostoList.cshtml" />
+    <Content Remove="Pages\Procesamiento\Create.cshtml" />
+    <Content Remove="Pages\Procesamiento\Delete.cshtml" />
+    <Content Remove="Pages\Procesamiento\Details.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EPPlus" Version="6.2.10" />
+    <PackageReference Include="ExcelDataReader" Version="3.7.0-develop00385" />
+    <PackageReference Include="MediatR" Version="5.1.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="5.0.1" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.23" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.23" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.15">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.11" />
+    <PackageReference Include="System.Windows.Extensions" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\CentroCostoModule\Command\" />
+    <Folder Include="Modules\LecturasGaritaLogModule\Command\" />
+    <Folder Include="HikVisionSDK\" />
+    <Folder Include="wwwroot\AdminLte\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\ProcessVehiculoCentronics\Edit.cshtml" />
+    <None Include="Pages\ProcessVehiculoCentronics\Index.cshtml" />
+    <None Include="Pages\ProcessVehiculoCentronics\ListaVehiclosProcesados.cshtml" />
+    <None Include="Pages\Vehiculos\Create.cshtml" />
+    <None Include="Pages\Vehiculos\Delete.cshtml" />
+    <None Include="Pages\Vehiculos\Details.cshtml" />
+    <None Include="Pages\Vehiculos\Edit.cshtml" />
+    <None Include="Pages\Vehiculos\Index.cshtml" />
+  </ItemGroup>
+
+</Project>

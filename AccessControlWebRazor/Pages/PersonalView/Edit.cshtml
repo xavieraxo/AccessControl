@@ -1,0 +1,98 @@
+﻿@page
+@model AccessControlWebRazor.Pages.PersonalView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="content-wrapper">
+    <div class="contetn">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card" style="height: 850px">
+                        <div class="card-header">
+                            <div class="row">
+                                <div>
+                                    <h3 class="card-title" style="font-size: 20px; font-weight: bold;">Editando: Personal</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /.card-header -->
+                        <!-- /.card-body -->
+                        <div class="card-body table-responsive p-0" style="max-height: auto; width: auto; overflow-y: auto; text-align: left;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <form method="post">
+                                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                    <input type="hidden" asp-for="PersonalModel.Id" />
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.IdTipoDocumento" class="control-label"></label>
+                                        <input asp-for="PersonalModel.IdTipoDocumento" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.NroLegajo" class="control-label"></label>
+                                        <input asp-for="PersonalModel.NroLegajo" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.Apellido" class="control-label"></label>
+                                        <input asp-for="PersonalModel.Apellido" class="form-control" />
+                                       
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.Nombre" class="control-label"></label>
+                                        <input asp-for="PersonalModel.Nombre" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.NroDocumento" class="control-label"></label>
+                                        <input asp-for="PersonalModel.NroDocumento" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.Localidad" class="control-label"></label>
+                                        <input asp-for="PersonalModel.Localidad" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.Email" class="control-label"></label>
+                                        <input asp-for="PersonalModel.Email" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="PersonalModel.Sexo" class="control-label"></label>
+                                        <input asp-for="PersonalModel.Sexo" class="form-control" />
+                                        
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" asp-for="PersonalModel.Habilitado" /> @Html.DisplayNameFor(model => model.PersonalModel.Habilitado)
+                                        </label>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" value="Save" class="btn btn-primary" />
+                                    </div>
+                                </form>
+                            </table>
+                        </div> <!-- /.card-body -->
+                    </div>
+                </div>
+                <div>
+                    <a asp-page="./Index">Back to List</a>
+                </div>
+
+                @section Scripts {
+                    @{
+                        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+                    }
+                    <script>
+
+                    </script>
+                }
+            </div>
+        </div>
+    </div>
+</div>

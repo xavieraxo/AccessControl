@@ -1,0 +1,65 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Procesamiento.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ProcesamientoModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.Legajo" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.Legajo" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.Legajo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.HoraIngreso" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.HoraIngreso" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.HoraIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.HoraEgreso" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.HoraEgreso" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.HoraEgreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.TotalHoras" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.TotalHoras" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.TotalHoras" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ProcesamientoModel.Procesado" /> @Html.DisplayNameFor(model => model.ProcesamientoModel.Procesado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.ProcedenciaEmpleado" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.ProcedenciaEmpleado" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.ProcedenciaEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.EstadoFichada" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.EstadoFichada" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.EstadoFichada" class="text-danger"></span>
+            </div>
+           
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

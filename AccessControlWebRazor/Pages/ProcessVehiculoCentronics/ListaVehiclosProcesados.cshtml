@@ -1,0 +1,123 @@
+﻿@page
+@model AccessControlWebRazor.Pages.ProcessVehiculoCentronics.ListaVehiclosProcesadosModel
+
+@{
+    ViewData["Title"] = "ListaVehiclosProcesados";
+}
+
+
+<style>
+    th, td {
+        padding: 0.5rem !important;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="content-fluid">
+        <div class="col-12 px-0">
+            <div class="card mb-0" style="height: 840px; width: auto; border-radius: 0">
+                <div class="card-header">
+                    <div class="row">
+                        <div>
+                            <h3 class="card-title" style="font-size: 20px; font-weight: bold;">Lista de Vehículos Externos Procesados</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <form method="post" class="form-inline mb-3 d-flex row justify-content-between align-items-center">
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <label for="Desde" class="mt-2" style="color: #000;">Desde:</label>
+                                <input asp-for="SearchModel.StartDate" type="datetime-local" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #8CA483; color: #fff;" />
+
+                            </div>
+
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <label for="Hasta" class="mt-2" style="color: #000;">Hasta:</label>
+                                <input asp-for="SearchModel.EndDate" type="datetime-local" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #8CA483; color: #fff;" />
+                            </div>
+
+                            <div class="form-group col-2" style="width: fit-content;">
+                                <label for="Filter" class="mt-2" style="color: #000;">Filtro:</label>
+                                <input asp-for="SearchModel.Filter" type="text" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: 120px; background-color: #8CA483; color: #fff;" placeholder="Dominio" />
+                            </div>
+
+                            <div class="form-group col-2" style="width: fit-content;">
+                                <input style="background-color: #505F4B; border-color: #505F4B;" type="submit" asp-page-handler="Search" value="Buscar 🔍" class="btn btn-primary mt-2" />
+                            </div>
+                            <div class="form-group col-2" style="width: fit-content;">
+                                <input style="background-color: #88B479; border-color: #505F4B;" type="submit" asp-page-handler="Export" value="Exportar ↓" class="btn btn-primary mt-2" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0" style="max-height: auto; width: auto; overflow-y: auto; text-align: left;">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead style="font-size: 18px; font-weight: bold; color: #fff;">
+                            <tr>
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].Dominio)
+                                </th>
+                                <th style="background-color: #A7191B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].Fecha)
+                                </th>
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].HoraIngreso)
+                                </th>
+                                <th style="background-color: #A7191B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].HoraEgreso)
+                                </th>
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].TotalHoras)
+                                </th>
+                                <th style="background-color: #A7191B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].Procesado)
+                                </th>
+                                <th style="background-color: #505F4B;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoVehiculoExterno[0].CentroCostoDesc)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 16px;">
+                            @foreach (var item in Model.ProcesamientoVehiculoExterno.OrderByDescending(x => Convert.ToDateTime(x.Fecha)))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Dominio)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fecha)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoraIngreso)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoraEgreso)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TotalHoras)
+                                    </td>
+                                    @if (item.Procesado == 0)
+                                    {
+                                        <td>
+                                            <i class="fas fa-times-circle text-danger"></i>
+                                        </td>
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <i class="fas fa-check-circle text-success"></i>
+                                        </td>
+                                    }
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CentroCostoDesc)
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+</div>

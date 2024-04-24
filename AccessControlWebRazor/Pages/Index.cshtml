@@ -1,0 +1,86 @@
+﻿@page
+@model AccessControlWebRazor.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "";
+}
+
+
+<div class="content-wrapper">
+    <div class="content-fluid">
+        <div class="col-12 px-0">
+            <div class="card mb-0" style="height: 840px; width: auto; border-radius: 0">
+
+                @*
+                <div class="card-header">
+                <h3 class="card-title">Lista de Ingresos y Egresos</h3>
+
+                @*<div class="card-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+                <div class="input-group-append">
+                <button type="submit" class="btn btn-default">
+                <i class="fas fa-search"></i>
+                </button>
+                </div>
+                </div>
+                </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body table-responsive p-0" style="height: 800px;">
+                <table class="table table-head-fixed text-nowrap">
+                <thead>
+                <tr>
+                <th>
+                @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].Apellido) y @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].Nombre)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].DNI)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].Observaciones)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].EstadoLectura)
+                </th>
+                <th>
+                @Html.DisplayNameFor(model => model.LecturasGaritaLog[0].FechaLectura)
+                </th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.LecturasGaritaLog)
+                {
+                <tr>
+                <td>
+                @Html.DisplayFor(modelItem => item.Apellido) @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.DNI)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.Observaciones)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.EstadoLectura)
+                </td>
+                <td>
+                @Html.DisplayFor(modelItem => item.FechaLectura)
+                </td>
+                <td>
+                @<a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+                </tr>
+                }
+                </tbody>
+                </table>
+                </div>*@
+                <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+        </div>
+    </div>
+</div>

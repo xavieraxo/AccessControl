@@ -1,0 +1,196 @@
+﻿<!-- Main Sidebar Container -->
+<aside class="main-sidebar elevation-4" style="background-color: #138D75; max-height: 840px">
+    <!-- Brand Logo -->
+    @* <a href="index3.html" class="brand-link">
+    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-light">AdminLTE 3</span>
+    </a>*@
+
+    <!-- Sidebar -->
+    <div class="sidebar" style="border-bottom: 1px solid #D1F2EB">
+        <!-- Sidebar user panel (optional) -->
+        <div class="user-panel mt-3 pb-3 d-flex align-items-center">            
+            <div class="info ml-3">
+                <a href="#" class="d-block" style="font-size: 24px; font-weight:bold; text-decoration: none; color: #D1F2EB;">Access Control</a>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- SidebarSearch Form -->
+    @* <div class="form-inline">
+    <div class="input-group" data-widget="sidebar-search">
+    <input style="background-color: #3C443A" class="form-control form-control-sidebar" type="search" placeholder="Buscar" aria-label="Search">
+    <div class="input-group-append">
+    <button style="background-color: #3C443A" class="btn btn-sidebar">
+    <i class="fas fa-search fa-fw"></i>
+    </button>
+    </div>
+    </div>
+    </div> *@
+
+    <!-- Sidebar Menu -->
+    <nav>
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <!-- Add icons to the links using the .nav-icon class
+                 with font-awesome or any other icon font library -->
+            <li class="nav-item menu-open">
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/LogDeAcceso" class="nav-link">
+                            <i class="fas fa-arrows-alt-v nav-icon" style="color:#F8C471 ;"></i>
+                            <p style="color:#D1F2EB; font-weight:bold;">Ingresos/Egresos</p>
+                        </a>
+                    </li>
+                    @* <li class="nav-item">
+                    <a href="/LecturaPatentes" class="nav-link">
+                    <i class="fas fa-arrows-alt-v nav-icon" style="color:#F8C471 ;"></i>
+                    <p style="color:#D1F2EB; font-weight:bold;">Ingreso/Egreso CAMARA</p>
+                    </a>
+                    </li>*@
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active" style="background-color:#455041;">
+                            <i class="fas fa-globe nav-icon" style="color:#F8C471 ;"></i>
+                            <p style="color:#D1F2EB; font-weight:bold;">
+                                Recursos
+                                <i class="right fas fa-angle-left" style="color:#F8C471 ;"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Invitados/Index" class="nav-link">
+                                    <i class="fas fa-user-friends nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Invitados</p>
+                                </a>
+                            <li class="nav-item">
+                                <a href="/CentroCostoView/Index" class="nav-link">
+                                    <i class="fas fa-dollar-sign nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Centro de Costo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/PersonalView/Index" class="nav-link">
+                                    <i class="fas fa-user nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/PersonalExternoView/Index" class="nav-link">
+                                    <i class="fas fa-user nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal Externo</p>
+                                </a>
+                            </li>
+                                @*<li class="nav-item">
+                            <a href="/Maquinarias/Index" class="nav-link">
+                            <i class="fas fa-tools nav-icon" style="color:#F8C471 ;"></i>
+                            <p style="color:#D1F2EB; font-weight:bold;">Maquinarias</p>
+                            </a>
+                            </li>*@
+                            @* <li class="nav-item">
+                                <a href="/VehiculoProdengView/Index" class="nav-link">
+                                    <i class="fas fa-car nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos</p>
+                                </a>
+                            </li>*@
+                            <li class="nav-item">
+                                <a href="/Vehiculos/Index" class="nav-link">
+                                    <i class="fas fa-car nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos Externos</p>
+                                </a>
+                            </li> 
+                            <li class="nav-item">
+                                <a href="/UsuarioView/Index" class="nav-link">
+                                    <i class="fas fa-id-card nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Usuarios</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active" style="background-color:#455041;">
+                            <i class="fas fa-spinner nav-icon" style="color:#F8C471 ;"></i>
+                            <p style="color:#D1F2EB; font-weight:bold;">
+                                Procesamiento
+                                <i class="right fas fa-angle-left" style="color:#F8C471 ;"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Procesamiento/Index" class="nav-link">
+                                    <i class="fas fa-cogs nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal</p>
+                                </a>
+                            </li>
+                            @* <li class="nav-item">
+                                <a href="/ProcessPersonalExternoView/Index" class="nav-link">
+                                    <i class="fas fa-cogs nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal Externo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/ProcessVehiculoProdengView/Index" class="nav-link">
+                                    <i class="fas fa-cogs nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/ProcessVehiculoCentronics/Index" class="nav-link">
+                                    <i class="fas fa-cogs nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos Externos</p>
+                                </a>
+                            </li> *@
+                        </ul>
+                    </li>
+                    <li class="nav-item menu-open">
+                        <a href="#" class="nav-link active" style="background-color:#455041;">
+                            <i class="fas fa-list nav-icon" style="color:#F8C471 ;"></i>
+                            <p style="color:#D1F2EB; font-weight:bold;">
+                                Listados Procesados
+                                <i class="right fas fa-angle-left" style="color:#F8C471 ;"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="/Procesamiento/ListaProcesados" class="nav-link">
+                                    <i class="fas fa-file-alt nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal</p>
+                                </a>
+                            </li>
+                            @* <li class="nav-item">
+                                <a href="/ProcessPersonalExternoView/ListaPersonalExternoProcesados" class="nav-link">
+                                    <i class="fas fa-file-alt nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Personal Externo</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/ProcessVehiculoProdengView/ListaVehiculosProdengProcesados" class="nav-link">
+                                    <i class="fas fa-file-alt nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/ProcessVehiculoCentronics/ListaVehiclosProcesados" class="nav-link">
+                                    <i class="fas fa-file-alt nav-icon" style="color:#F8C471 ;"></i>
+                                    <p style="color:#D1F2EB; font-weight:bold;">Vehículos Externos</p>
+                                </a>
+                            </li> *@
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            @*<li class="nav-item">
+            <a href="#" class="nav-link">
+            <i class="nav-icon fas fa-th"></i>
+            <p>
+            Simple Link
+            <span class="right badge badge-danger">New</span>
+            </p>
+            </a>
+            </li>*@
+        </ul>
+    </nav>
+    <!-- /.sidebar-menu -->
+    <!-- /.sidebar -->
+</aside>

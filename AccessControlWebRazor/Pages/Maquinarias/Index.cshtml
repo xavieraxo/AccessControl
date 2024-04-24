@@ -1,0 +1,72 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Maquinarias.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="content-wrapper">
+    <div class="contetn">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card" style="height: 850px">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h3 class="card-title" style="font-size: 20px; font-weight: bold;">Maquinarias</h3>
+                            </div>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body table-responsive p-0" style="max-height: 440px; width: auto; overflow-y: auto; text-align: left;">
+                            <table class="table table-head-fixed text-nowrap">
+                                <thead style="font-size: 24px; font-weight: bold; color: #fff;">
+                                    <tr>
+                                        <th style="background-color: #505F4B;">
+                                            @Html.DisplayNameFor(model => model.MaquinariaModel[0].Description)
+                                        </th>
+                                        <th style="background-color: #A7191B;">
+                                            @Html.DisplayNameFor(model => model.MaquinariaModel[0].Brand)
+                                        </th>
+                                        <th style="background-color: #505F4B;">
+                                            @Html.DisplayNameFor(model => model.MaquinariaModel[0].Number)
+                                        </th>
+                                        <th style="background-color: #A7191B;">
+                                            @Html.DisplayNameFor(model => model.MaquinariaModel[0].IsActive)
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody style="font-size: 16px;">
+                                    @foreach (var item in Model.MaquinariaModel)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Description)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Brand)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.Number)
+                                            </td>
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.IsActive)
+                                            </td>
+                                            <td>
+                                                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+

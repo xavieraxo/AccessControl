@@ -1,0 +1,149 @@
+﻿@page
+@model AccessControlWebRazor.Pages.ProcessPersonalExternoView.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content-wrapper">
+    <div class="content-fluid">
+        <div class="card mb-0" style="height: 840px; width: auto; border-radius: 0">
+            <!-- /.card-header -->
+            <!-- /.card-body -->
+            <section class="form-register">
+                <h4>Asignar Centro de Costo</h4>
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Procesamiento.Id" />
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.PersonalExternoId" class="control-label"></label>
+                        <input asp-for="Procesamiento.PersonalExternoId" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.DNI" class="control-label"></label>
+                        <input asp-for="Procesamiento.DNI" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.HoraIngreso" class="control-label"></label>
+                        <input asp-for="Procesamiento.HoraIngreso" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.HoraEgreso" class="control-label"></label>
+                        <input asp-for="Procesamiento.HoraEgreso" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.TotalHoras" class="control-label"></label>
+                        <input asp-for="Procesamiento.TotalHoras" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.Procesado" class="control-label"></label>
+                        <input asp-for="Procesamiento.Procesado" class="form-control" Readonly />
+                    </div>
+                    @* <div class="form-group">
+                    <label asp-for="Procesamiento.EstadoFichada" class="control-label"></label>
+                    <input asp-for="Procesamiento.EstadoFichada" class="form-control" Readonly />
+                    </div> *@
+                    @*  <div class="form-group">
+                    <label asp-for="Procesamiento.CentroCostoDesc" class="control-label"></label>
+                    <input asp-for="Procesamiento.CentroCostoDesc" class="form-control" Readonly />
+                    </div> *@
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.Fecha" class="control-label"></label>
+                        <input asp-for="Procesamiento.Fecha" class="form-control" Readonly />
+                    </div>
+                    <div class="form-group">
+                        <label>Centro de Costo</label>
+
+                        <select class="form-control" asp-for="Procesamiento.CentroCostoId"
+                                asp-items="@(Model.CostoEntities != null ? new SelectList(Model.CostoEntities, "ID", "Nombre") : null)">
+                        </select>
+                    </div>
+                    <div class="form-group d-flex justify-content-between">
+                        <input id="boton" type="submit" value="Guardar" class="btn btn-primary" />
+                        <a asp-page="./Index" id="Volver" class="btn btn-secondary">← Volver a la lista</a>
+                    </div>
+
+                </form>
+
+
+            </section>
+        </div> <!-- /.card-body -->
+    </div>
+</div>
+
+<style>
+    .form-register {
+        background-color: transparent;
+        width: 50%;
+        height: 100%;
+        padding: 30px;
+        padding-top: 15px;
+        margin: auto;
+        margin-top: 0;
+        border-radius: 4px;
+        font-family: 'calibri';
+        color: white;
+        box-shadow: 7px 13px 37px #000;
+    }
+
+        .form-register h4 {
+            color: #000;
+            font-size: 22px;
+            top: 0;
+            margin-bottom: 15px;
+        }
+
+
+    .form-group {
+        background-color: transparent;
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 16px;
+        font-family: 'calibri';
+        font-size: 18px;
+        color: #000;
+    }
+
+    .form-control {
+        background-color: transparent;
+        border: 1px solid #000;
+        width: 100%;
+        height: auto;
+    }
+
+    #boton {
+        font-size: 20px;
+        color: #fff;
+        background-color: blue;
+        width: fit-content;
+        padding: 0.5rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 10px;
+    }
+
+    #Volver {
+        width: fit-content;
+        font-size: 20px;
+        background-color: #a7191b;
+        padding: 0.5rem;
+        cursor: pointer;
+        border: 2px solid transparent;
+        border-radius: 10px;
+    }
+</style>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+
+    </script>
+}
+            </div>
+        </div>
+    </div>
+</div>

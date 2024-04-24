@@ -1,0 +1,84 @@
+﻿@page
+@model AccessControlWebRazor.Pages.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>LecturasGaritaLog</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.Apellido" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.Apellido" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.Nombre" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.Nombre" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.Genero" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.Genero" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.Genero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.DNI" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.DNI" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.DNI" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.TipoEjemplar" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.TipoEjemplar" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.TipoEjemplar" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.FechaNacimiento" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.FechaNacimiento" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.FechaNacimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.FechaVencimiento" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.FechaVencimiento" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.FechaVencimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.NumeroExtraCuit" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.NumeroExtraCuit" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.NumeroExtraCuit" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.Observaciones" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.Observaciones" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.Observaciones" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.EstadoLectura" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.EstadoLectura" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.EstadoLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LecturasGaritaLog.FechaLectura" class="control-label"></label>
+                <input asp-for="LecturasGaritaLog.FechaLectura" class="form-control" />
+                <span asp-validation-for="LecturasGaritaLog.FechaLectura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

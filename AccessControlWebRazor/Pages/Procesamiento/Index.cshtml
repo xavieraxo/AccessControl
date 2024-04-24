@@ -1,0 +1,133 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Procesamiento.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    th, td {
+        padding: 0.5rem !important;
+    }
+</style>
+
+<div class="content-wrapper">
+    <div class="content-fluid">
+        <div class="col-12 px-0">
+            <div class="card mb-0" style="height: 840px; width: auto; border-radius: 0">
+                <div class="card-header">
+                    <div class="row">
+                        <div>
+                            <h3 class="card-title" style="font-size: 20px; font-weight: bold;">Personal en Procesamiento</h3>
+                        </div>
+                    </div>
+                    <div>
+                        <form method="post" class="form-inline mb-3 d-flex row justify-content-between align-items-center">
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <label for="Desde" class="mt-2" style="color: #000;">Desde:</label>
+                                <input asp-for="SearchModel.StartDate" type="datetime-local" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #F8C471;color: #138D75;" />
+
+                            </div>
+
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <label for="Hasta" class="mt-2" style="color: #000;">Hasta:</label>
+                                <input asp-for="SearchModel.EndDate" type="datetime-local" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #F8C471;color: #138D75;" />
+                            </div>
+
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <label for="Filter" class="mt-2" style="color: #000;">Filtro:</label>
+                                <input asp-for="SearchModel.Filter" type="text" class="form-control mt-2 rounded" style="border: 1px solid #ddd; border-radius: 4px; width: auto; background-color: #F5CBA7;color: #138D75;" placeholder="Legajo/DNI" />
+                            </div>
+
+                            <div class="form-group col-3" style="width: fit-content;">
+                                <input style="background-color: #F8C471;color: #138D75; border-color: aquamarine;" type="submit" asp-page-handler="Search" value="Buscar 🔍" class="btn btn-primary mt-2" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- /.card-header -->
+                <!-- /.card-body -->
+                <div class="card-body table-responsive p-0" style="max-height: auto; width: auto; overflow-y: auto; text-align: left;">
+                    <table class="table table-head-fixed text-nowrap">
+                        <thead style="font-size: 18px; font-weight: bold; color: #fff;">
+                            <tr>
+                                <th style="background-color: aquamarine;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].Legajo)
+                                </th>
+                                <th style="background-color: aqua;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].DNI)
+                                </th>
+                                @* <th style="background-color: #505F4B;">
+                                @Html.DisplayNameFor(model => model.ProcesamientoModel[0].Nombre) aca irian juntos nombre y apellido
+                                </th>  *@
+                                <th style="background-color: aquamarine;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].Fecha)
+                                </th>
+                                <th style="background-color: aqua;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].HoraIngreso) @* borrarle la fecha y dejarle unicamente la hora *@
+                                </th>
+                                <th style="background-color: aquamarine;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].HoraEgreso) @* borrarle la fecha y dejarle unicamente la hora *@
+                                </th>
+                                <th style="background-color: aqua;">
+                                    @Html.DisplayNameFor(model => model.ProcesamientoModel[0].TotalHoras)
+                                </th>
+                                <th></th>
+                                @*  <th style="background-color: #505F4B;">
+                                @Html.DisplayNameFor(model => model.ProcesamientoModel[0].Procesado)
+                                </th> *@
+
+                            </tr>
+                        </thead>
+                        <tbody style="font-size: 16px;">
+                            @foreach (var item in Model.ProcesamientoModel.OrderByDescending(x => Convert.ToDateTime(x.Fecha)))
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Legajo)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.DNI)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Fecha)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoraIngreso)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.HoraEgreso)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TotalHoras)
+                                    </td>
+                                    @*  @if (item.Procesado == false)
+                                {
+                                <td>
+                                <i class="fas fa-times-circle text-danger"></i>
+                                </td>
+                                }
+                                else
+                                {
+                                <td>
+                                <i class="fas fa-check-circle text-success"></i>
+                                </td>
+                                } *@
+
+                                    <td>
+                                        @*<button asp-page="./Edit" asp-route-id="@item.Id">
+                                    Asignar Centro de Costo
+                                    </button>*@
+                                        <a style="display: inline-block; font-size: 16px; text-align: center; text-decoration: none; border: 1px solid #ccc; border-radius: 5px; background-color: #8BBF7A; color: #000; cursor: pointer;" asp-page="./Edit" asp-route-id="@item.Id">Asignar Centro de Costo</a>
+
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div> <!-- /.card-body -->
+            </div>
+        </div>
+    </div>
+</div>

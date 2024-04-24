@@ -1,0 +1,60 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Vehiculos.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="content-wrapper">
+
+
+    <div class="contetn">
+
+        <div class="container-fluid">
+            <h1>Edit</h1>
+
+            <h4>Vehículo</h4>
+            <hr />
+            <div class="container">
+
+                <form method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Vehiculo.Id" />
+                    <div class="form-group">
+                        <label asp-for="Vehiculo.Dominio" class="control-label"></label>
+                        <input asp-for="Vehiculo.Dominio" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Vehiculo.Brand" class="control-label"></label>
+                        <input asp-for="Vehiculo.Brand" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Vehiculo.Model" class="control-label"></label>
+                        <input asp-for="Vehiculo.Model" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Vehiculo.IsActive" class="control-label"></label>
+                        <input asp-for="Vehiculo.IsActive" class="form-control" />
+
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </form>
+
+            </div>
+
+            <div>
+                <a asp-page="./Index">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

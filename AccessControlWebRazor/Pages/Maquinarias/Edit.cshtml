@@ -1,0 +1,155 @@
+﻿@page
+@model AccessControlWebRazor.Pages.Procesamiento.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<div class="content-wrapper">
+
+
+    <div class="contetn">
+
+        <div class="container-fluid">
+            <h1>Edit</h1>
+
+            <h4>ProcesamientoModel</h4>
+            <hr />
+            <div class="container">
+                <h2>Editar Registro</h2>
+
+                <form method="post">
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Procesamiento.Id" />
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.Legajo">Legajo</label>
+                        <input asp-for="Procesamiento.Legajo" class="form-control" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.DNI">DNI</label>
+                        <input asp-for="Procesamiento.DNI" class="form-control" readonly />
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.HoraIngreso" class="control-label"></label>
+                        <input asp-for="Procesamiento.HoraIngreso" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.HoraIngreso" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.HoraEgreso" class="control-label"></label>
+                        <input asp-for="Procesamiento.HoraEgreso" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.HoraEgreso" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.TotalHoras" class="control-label"></label>
+                        <input asp-for="Procesamiento.TotalHoras" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.TotalHoras" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.Procesado" class="control-label"></label>
+                        <input asp-for="Procesamiento.Procesado" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.Procesado" class="text-danger"></span>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.ProcedenciaEmpleado" class="control-label"></label>
+                        <input asp-for="Procesamiento.ProcedenciaEmpleado" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.ProcedenciaEmpleado" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="Procesamiento.EstadoFichada" class="control-label"></label>
+                        <input asp-for="Procesamiento.EstadoFichada" class="form-control" readonly />
+                        <span asp-validation-for="Procesamiento.EstadoFichada" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Centro de Costo</label>
+
+                        <select class="form-control" asp-for="Procesamiento.CentroCostoModel.Codigo"
+                         asp-items="@(Model.costoEntities != null ? new SelectList(Model.costoEntities, "Codigo", "Nombre") : null)">
+                        </select>
+                    </div>
+                    @*<div class="form-group">
+                        <label asp-for="Procesamiento.CentroCosto">Centro de Costo</label>
+                        <select asp-for="Procesamiento.CentroCosto"
+                                asp-items="@(Model.costoEntities != null ? new SelectList(Model.costoEntities, "Codigo", "Nombre") : null)"
+                                class="form-control"></select>
+                        <span asp-validation-for="Procesamiento.CentroCosto" class="text-danger"></span>
+                    </div>*@
+
+                    <div class="form-group">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@*<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ProcesamientoModel.Id" />
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.Legajo" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.Legajo" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.Legajo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.HoraIngreso" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.HoraIngreso" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.HoraIngreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.HoraEgreso" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.HoraEgreso" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.HoraEgreso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.TotalHoras" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.TotalHoras" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.TotalHoras" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ProcesamientoModel.Procesado" /> @Html.DisplayNameFor(model => model.ProcesamientoModel.Procesado)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.ProcedenciaEmpleado" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.ProcedenciaEmpleado" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.ProcedenciaEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProcesamientoModel.EstadoFichada" class="control-label"></label>
+                <input asp-for="ProcesamientoModel.EstadoFichada" class="form-control" />
+                <span asp-validation-for="ProcesamientoModel.EstadoFichada" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>*@
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        
+    </script>
+}
+
