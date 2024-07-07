@@ -79,6 +79,7 @@
     <Content Remove="Pages\Procesamiento\Create.cshtml" />
     <Content Remove="Pages\Procesamiento\Delete.cshtml" />
     <Content Remove="Pages\Procesamiento\Details.cshtml" />
+    <Content Remove="wwwroot\lib\Configuración.json" />
   </ItemGroup>
 
   <ItemGroup>
