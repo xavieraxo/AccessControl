@@ -28,6 +28,10 @@ namespace AccessControlWebRazor.Pages.Procesamiento
             if (procesamientos.Count == 0)
             {
                 ProcesamientoModel = await _mediator.Send(new GetAllProcesamientoDistincZeroQuery());
+                if (ProcesamientoModel == null)
+                {
+                    return;
+                }
 
                 foreach (var proceso in ProcesamientoModel)
                 {

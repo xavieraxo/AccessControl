@@ -1,9 +1,9 @@
 ﻿<!-- Navbar -->
-<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="background-color: #138D75">
+<nav class="main-header navbar navbar-expand navbar-light navbar-default">
     <!-- Left navbar links -->
     <ul class="navbar-nav" style="font-size: 16px;" >
         <li  class="nav-item">
-            <a style="color: black; background-color: #F8C471 ;" class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
         @*<li  class="nav-item d-none d-sm-inline-block">
             <a style="color: #fff; background-color: #a7191b;" href="#" class="nav-link">Lista de Ingresos y Egresos</a>
@@ -137,8 +137,8 @@
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
         </li>*@
-        <li class="nav-item">
-            <a style="color: black; background-color: #F8C471 ; font-size: 16px;" class="nav-link" data-widget="fullscreen" href="\Logout" role="button">
+        <li class="nav-item d-none d-sm-inline-block">
+            <a class="nav-link" href="\Logout" role="button">
             Logout
             </a>
         </li>
@@ -148,5 +148,43 @@
             </a>
         </li>*@
     </ul>
+    <ul class="navbar-nav ml-auto">
+        <!-- Color Picker -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="fas fa-paint-brush"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-blue')">Blue</a>
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-black')">Black</a>
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-purple')">Purple</a>
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-yellow')">Yellow</a>
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-red')">Red</a>
+                <a href="#" class="dropdown-item" onclick="changeSkin('skin-green')">Green</a>
+            </div>
+        </li>
+    </ul>
 </nav>
 <!-- /.navbar -->
+<script>
+    // Function to change skin
+    function changeSkin(skin) {
+        var navbar = document.getElementsByClassName('main-header')[0];
+
+        // Remove existing skin classes
+        navbar.className = navbar.className.replace(/navbar-\S+/g, 'navbar-' + skin.split('-')[1]);
+
+        // Store the selected skin in localStorage
+        localStorage.setItem('skin', skin);
+    }
+
+    // Apply saved skin on load
+    window.onload = function () {
+        var savedSkin = localStorage.getItem('skin');
+        if (savedSkin) {
+            var navbar = document.getElementsByClassName('main-header')[0];
+
+            navbar.className = navbar.className.replace(/navbar-\S+/g, 'navbar-' + savedSkin.split('-')[1]);
+        }
+    }
+</script>

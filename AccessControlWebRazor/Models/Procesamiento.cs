@@ -1,7 +1,9 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AccessControlWebRazor.Models
 {
+    [Table("ProcesamientoPersonal")]
     public class Procesamiento
     {   
         //[Key]
