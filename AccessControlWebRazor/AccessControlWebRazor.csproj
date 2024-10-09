@@ -105,7 +105,6 @@
     <Folder Include="Modules\CentroCostoModule\Command\" />
     <Folder Include="Modules\LecturasGaritaLogModule\Command\" />
     <Folder Include="HikVisionSDK\" />
-    <Folder Include="wwwroot\AdminLte\" />
   </ItemGroup>
 
   <ItemGroup>
