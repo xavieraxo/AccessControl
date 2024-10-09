@@ -39,6 +39,7 @@ namespace AccessControlWebRazor
             builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionJavier")));
             //builder.Services.AddDbContext<DataContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("ConnectionSebastian")));
 
+            builder.Services.Configure<ThemeColors>(builder.Configuration.GetSection("ThemeColors"));
             builder.Services.AddDefaultIdentity<AccessControlWebRazorUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<DataContext>();
 
